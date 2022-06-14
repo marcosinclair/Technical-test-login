@@ -1,0 +1,8 @@
+<div id="users-container">
+  <div id="users-wrap">
+    <h2>User List</h2>
+    <ul class="event-list" *ngFor="let user of users; let i = index">
+      <app-user [user]="user" [index]="i + 1"></app-user>
+    </ul>
+  </div>
+</div>

@@ -1,0 +1,44 @@
+* {
+    font-family: Arial, Helvetica, sans-serif
+}
+
+.logged-user-wrap,
+.logged-user-wrap a {
+    color: white;
+    margin: 0 10px 4px;
+}
+
+.fa-user{
+    margin-bottom: 4px;
+}
+
+.navbar-brand {
+    color: whitesmoke !important;
+    margin-bottom: 2px;
+}
+
+#navbarCollapse,
+.logout {
+    margin-top: 8px;
+    padding: 8px;
+    right: 0 auto;
+}
+
+
+
+@media (min-width: 768px) {
+
+    #navbarCollapse {
+        margin-top: 0;
+    }
+
+    .logged-user-wrap,
+    .logged-user-wrap a {
+        color: white;
+        margin: 0 10px 0;
+    }
+
+    .fa-user{
+        margin-bottom: 0px;
+    }
+}

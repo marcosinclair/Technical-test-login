@@ -1,0 +1,11 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;  
+}
+
+.card{
+    height: 300px;
+}
+
+.card-footer a{
+    color: #ffc312;
+}

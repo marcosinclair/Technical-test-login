@@ -1,0 +1,163 @@
+<li class="user-card">
+  <div class="index">
+    <span class="text-index">{{ index }}</span>
+  </div>
+  <div class="info">
+    <h2 class="name">{{ user.name }} {{ user.surname }}</h2>
+    <p class="email">Email:{{ user.email }}</p>
+  </div>
+  <div class="user-management">
+    <ul>
+      <li class="details" style="width: 33%">
+        <button (click)="details(showModal)" type="button" class="btn btn-primary">
+          Details
+        </button>
+      </li>
+      <li class="edit" style="width: 34%">
+        <button (click)="edit(contentModal)" type="button" class="btn btn-success">
+          Edit
+        </button>
+      </li>
+      <li class="delete" style="width: 33%">
+        <button (click)="delete(deleteModal)" type="button" class="btn btn-danger" >
+          Delete
+        </button>
+      </li>
+    </ul>
+  </div>
+</li>
+
+<!-- Delete Modal -->
+<ng-template #deleteModal let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">User delete</h4>
+      <button
+        type="button"
+        class="btn-close btn-danger"
+        aria-label="Close"
+        (click)="modal.dismiss('Cross click')"
+      ></button>
+    </div>
+  
+    <div class="modal-body">
+      <div class="mb-3">          
+          <p> Are you sure to delete: {{ user.name }} {{user.surname}}?</p>
+        </div>
+    </div>
+    <div class="modal-footer">
+      <button
+        type="button"
+        class="btn btn-danger"
+        (click)="modal.close('Save click')"
+      >
+        Delete
+      </button>
+    </div>
+  </ng-template>
+
+
+<!-- Show modal -->
+<ng-template #showModal let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">User details</h4>
+    <button
+      type="button"
+      class="btn-close btn-danger"
+      aria-label="Close"
+      (click)="modal.dismiss('Cross click')"
+    ></button>
+  </div>
+
+  <div class="modal-body">
+    <div class="mb-3">
+        <label for="">ID:</label>
+        <p>{{ user.id }}</p>
+      </div>
+      <div class="mb-3">
+      <label for="">Name:</label>
+      <p>{{ user.name }}</p>
+    </div>
+    <div class="mb-3">
+      <label for="">Surname:</label>
+      <p>{{ user.surname }}</p>
+    </div>
+    <div class="mb-3">
+      <label for="">Email:</label>
+      <p>{{ user.email }}</p>
+    </div>    
+  </div>
+  <div class="modal-footer">
+    <button
+      type="button"
+      class="btn btn-primary"
+      (click)="modal.close('Save click')"
+    >
+      Close
+    </button>
+  </div>
+</ng-template>
+
+<!-- Edit Modal -->
+<ng-template #contentModal let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">User edit</h4>
+    <button
+      type="button"
+      class="btn-close btn-danger"
+      aria-label="Close"
+      (click)="modal.dismiss('Cross click')"
+    ></button>
+  </div>
+
+  <div class="modal-body">
+    <form>
+      <div class="mb-3">
+        <label for="dateOfBirth">Name</label>
+        <div class="input-group">
+          <input
+            id="name"
+            type="text"
+            placeholder="Name"
+            value="{{ user.name }}"
+            name="name"
+          />
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label for="dateOfBirth">Surname</label>
+        <div class="input-group">
+          <input
+            id="surname"
+            type="text"
+            placeholder="Surname"
+            value="{{ user.surname }}"
+            name="surname"
+          />
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label for="dateOfBirth">Email</label>
+        <div class="input-group">
+          <input
+            id="email"
+            type="text"
+            placeholder="Email"
+            value="{{ user.email }}"
+            name="email"
+          />
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button
+      type="button"
+      class="btn btn-success"
+      (click)="modal.close('Save click')"
+    >
+      Edit
+    </button>
+  </div>
+</ng-template>

@@ -1,0 +1,27 @@
+<!--Fontawesome CDN-->
+<link
+  rel="stylesheet"
+  href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+  integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+  crossorigin="anonymous"
+/>
+
+<nav class="navbar navbar-expand navbar-dark fixed-top">
+  <div class="container-fluid">
+    <a class="navbar-brand">Technical Test</a>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav me-auto mb-2 mb-md-0">
+        <li class="nav-item active" *ngIf="serviceIsAuth || isAuth">
+          <a class="nav-link active" routerLink="users">Users</a>
+        </li>
+      </ul>
+      <div
+        *ngIf="serviceIsAuth || isAuth"
+        class="logged-user-wrap d-flex justify-content-center align-items-center"
+      >
+        <i class="fas fa-user"></i>
+        <a class="logout" routerLink="logout" (click)="logout()">Logout</a>
+      </div>
+    </div>
+  </div>
+</nav>
